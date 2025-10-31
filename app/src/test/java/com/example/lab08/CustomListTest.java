@@ -38,11 +38,11 @@ public class CustomListTest {
     @Test
     public void testGetCount() {
         CustomList list = new CustomList();
-        assertEquals(0, list.getCount());
+        assertEquals(0, list.countCities());
         list.addCity(new City("Calgary", "AB"));
         list.addCity(new City("Edmonton", "AB"));
-        assertEquals(2, list.getCount());
+        assertEquals(2, list.countCities());
         list.deleteCity(new City("Calgary", "AB"));
-        assertEquals(1, list.getCount());
+        assertEquals(1, list.countCities());
     }
 }
