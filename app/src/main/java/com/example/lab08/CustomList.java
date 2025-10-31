@@ -22,5 +22,9 @@ public class CustomList {
         return cities.contains(city);
     }
 
-
+    public void deleteCity(City city) {
+        if (!cities.remove(city)) {
+            throw new IllegalArgumentException();
+        }
+    }
 }
