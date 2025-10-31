@@ -11,4 +11,27 @@ public class CustomListTest {
         assertTrue(list.hasCity(calgary));
     }
 
+    @Test
+    public void testHasCityAbsent() {
+        CustomList list = new CustomList();
+        list.addCity(new City("Calgary", "AB"));
+        assertFalse(list.hasCity(new City("Edmonton", "AB")));
+    }
+
+    @Test
+    public void testDeleteCityRemoves() {
+        CustomList list = new CustomList();
+        City calgary = new City("Calgary", "AB");
+        list.addCity(calgary);
+        list.deleteCity(calgary);
+        assertFalse(list.hasCity(calgary));
+    }
+
+    @Test
+    public void testDeleteCityMissingThrows() {
+        CustomList list = new CustomList();
+        assertThrows(IllegalArgumentException.class, () ->
+                list.deleteCity(new City("Regina", "SK"))
+        );
+    }
 }

@@ -21,4 +21,6 @@ public class CustomList {
     public boolean hasCity(City city) {
         return cities.contains(city);
     }
+
+
 }
